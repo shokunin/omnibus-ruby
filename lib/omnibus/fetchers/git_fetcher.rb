@@ -24,13 +24,11 @@ module Omnibus
     def initialize(software)
       @name         = software.name
       @source       = software.source
-
-      if Config.version_override.has_key? software
-        @version      = Config.version_override[software]
+      if Config.version_override.has_key? software.name
+        @version      = Config.version_override[software.name]
       else
         @version      = software.version
       end
-
       @project_dir  = software.project_dir
       super
     end
