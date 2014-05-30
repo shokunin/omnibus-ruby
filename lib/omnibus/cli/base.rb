@@ -107,7 +107,8 @@ module Omnibus
     class_option :version,
       desc: 'Override the project version send project:version',
       aliases: '-v',
-      type: :hash
+      type: :hash,
+      default: {}
 
     #
     # Hide the default help task to encourage people to use +-h+ instead of
