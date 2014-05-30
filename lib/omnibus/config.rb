@@ -290,6 +290,13 @@ module Omnibus
     #   @return [Array]
     default :ldd_whitelist_override, []
 
+    # @!attribute [rw] version_override
+    #   manually override the project version on the command line
+    #
+    #   @return [Hash]
+    default :version_override, {}
+
+
     # # @!endgroup
 
     # @!group Build Control Parameters

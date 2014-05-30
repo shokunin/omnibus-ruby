@@ -43,6 +43,11 @@ module Omnibus
         Omnibus.logger.level = @options[:log_level]
       end
 
+      # If there are any version changes then go ahead and update them
+      @options[:version].each do |key, value|
+        Config.version_override[key] = value
+      end
+
       # Do not load the Omnibus config if we are asking for help or the version
       if %w(help version).include?(config[:current_command].name)
         log.debug { 'Skipping Omnibus loading (detected help or version)' }
@@ -99,6 +104,10 @@ module Omnibus
       aliases: '-o',
       type: :hash,
       default: {}
+    class_option :version,
+      desc: 'Override the project version send project:version',
+      aliases: '-v',
+      type: :hash
 
     #
     # Hide the default help task to encourage people to use +-h+ instead of
