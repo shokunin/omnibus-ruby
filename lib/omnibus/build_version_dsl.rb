@@ -114,6 +114,7 @@ module Omnibus
     def construct_build_version(version_source = nil)
       case source_type
       when :option
+        log.info(log_key) { "Build Version is overridden set to '#{Config.build_version_override}'" }
         @build_version = Config.build_version_override
       when :git
         version = if version_source
