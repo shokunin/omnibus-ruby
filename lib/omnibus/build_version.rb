@@ -123,10 +123,6 @@ module Omnibus
         build_version_items << ['git', commits_since_tag, git_sha_tag].join('.')
       end
 
-      if Config.build_version_override or Config.version_override
-        build_version_items << ['-', git_sha_tag].join('.')
-      end
-
       unless build_version_items.empty?
         build_tag << '+' << build_version_items.join('.')
       end
