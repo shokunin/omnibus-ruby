@@ -147,6 +147,8 @@ module Omnibus
 
         if cmd.exitstatus == 0
           cmd.stdout.chomp
+        elsif Config.build_version_override
+          Config.build_version_override
         else
           log.warn(log_key) do
             "Could not extract version information from 'git describe'! " \
