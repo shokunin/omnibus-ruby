@@ -48,6 +48,11 @@ module Omnibus
         Config.version_override[key] = value
       end
 
+      # If there are any version changes then go ahead and update them
+      if @options[:build_version]
+        Config.build_version_override = @options[:build_version]
+      end
+
       # Do not load the Omnibus config if we are asking for help or the version
       if %w(help version).include?(config[:current_command].name)
         log.debug { 'Skipping Omnibus loading (detected help or version)' }

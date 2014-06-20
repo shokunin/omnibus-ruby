@@ -113,6 +113,8 @@ module Omnibus
     # @return [void]
     def construct_build_version(version_source = nil)
       case source_type
+      when :option
+        @build_version = Config.build_version_override
       when :git
         version = if version_source
                     Omnibus::BuildVersion.new(version_source.project_dir)

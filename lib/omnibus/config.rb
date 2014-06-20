@@ -296,6 +296,11 @@ module Omnibus
     #   @return [Hash]
     default :version_override, {}
 
+    # @!attribute [rw] build_version_override
+    #   manually override the package version number
+    #
+    #   @return [String, nil]
+    default :build_version_override, nil
 
     # # @!endgroup
 
