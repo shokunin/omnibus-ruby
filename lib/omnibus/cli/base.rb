@@ -114,6 +114,11 @@ module Omnibus
       aliases: '-v',
       type: :hash,
       default: {}
+    class_option :build_version,
+      desc: 'Override the build/package version',
+      aliases: '-b',
+      type: :string,
+      default: nil
 
     #
     # Hide the default help task to encourage people to use +-h+ instead of
