@@ -47,6 +47,11 @@ $ bundle install --binstubs
 $ bin/omnibus build $MY_PROJECT_NAME
 ```
 
+bin/omnibus also now takes a few commandline options
+
+-b => specify a build verison eg 0.0.1
+--version="myrails_app:878328c5fc97fdf28fd5fefc0f8d68530683fb12"
+
 More details can be found in the generated project README file.
 
 
